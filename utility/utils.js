@@ -5,7 +5,7 @@ const getMsmeStatusColor = (status) => {
     case onboardingStatusTypes.COMPLETED:
       return "emerald-500";
     case onboardingStatusTypes.PENDING:
-      return "orange-500";
+      return "red-500";
     case onboardingStatusTypes.INPROGRESS:
       return "red-400";
     default:

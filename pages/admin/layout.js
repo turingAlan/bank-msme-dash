@@ -32,20 +32,22 @@ function Admin({ children }) {
       setHeaderStatsValue(onBoarderHeaderStatsData);
     } else if (router.pathname.includes("pending")) {
       setHeaderStatsValue(pendingHeaderStatsData);
+    } else if (router.pathname.includes("dashboard")) {
+      setHeaderStatsValue(dashHeaderStats);
     }
   }, [authenticationStatus, router]);
 
   return (
-    <>
+    <div className="min-h-screen">
       <Sidebar />
-      <div className="relative bg-blueGray-100 md:ml-64">
+      <div className="relative min-h-screen bg-blueGray-100 md:ml-64">
         <AdminNavbar />
         <div className="flex flex-col">
           <HeaderStats headerData={headerStatsValue} />
           <div className="-m-24 mx-auto w-full px-4 md:px-10">{children}</div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,4 +1,5 @@
 import { useAuth } from "context/UseAuth";
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
 const UserDropdown = () => {
@@ -27,7 +28,7 @@ const UserDropdown = () => {
       <button
         id="dropdownUserAvatarButton"
         data-dropdown-toggle="dropdownAvatar"
-        className="flex rounded-full bg-white text-sm focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 md:me-0"
+        className="flex rounded-full bg-white text-sm focus:ring-4 focus:ring-gray-300 md:me-0 dark:focus:ring-gray-600"
         type="button"
         onClick={() => {
           dropdownPopoverShow
@@ -55,28 +56,20 @@ const UserDropdown = () => {
           aria-labelledby="dropdownUserAvatarButton"
         >
           <li>
-            <a
+            <Link
               href="/admin/dashboard"
               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
             >
               Dashboard
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              href="/admin/msme"
               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
             >
-              Settings
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              Earnings
-            </a>
+              Msme
+            </Link>
           </li>
         </ul>
         <div className="py-2" onClick={logoutUser}>

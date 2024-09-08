@@ -21,17 +21,11 @@ ChartJS.register(
   Legend,
 );
 
-export default function CardLineChart() {
+export default function CardPendingLineChart() {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: {
-        position: "bottom",
-        labels: {
-          color: "white",
-        },
-      },
       tooltip: {
         callbacks: {
           label: function (context) {
@@ -44,6 +38,12 @@ export default function CardLineChart() {
             }
             return label;
           },
+        },
+      },
+      legend: {
+        position: "bottom",
+        labels: {
+          color: "white",
         },
       },
       title: {
@@ -94,15 +94,15 @@ export default function CardLineChart() {
     labels,
     datasets: [
       {
-        label: new Date().getFullYear().toString(),
-        data: [65, 78, 66, 44, 56, 67, 75],
+        label: "Current Revenue",
+        data: [65, 78, 79, 75, 80, 80, 76],
         borderColor: "#4c51bf",
         backgroundColor: "#4c51bf",
         fill: false,
       },
       {
-        label: (new Date().getFullYear() - 1).toString(),
-        data: [40, 68, 86, 74, 56, 60, 87],
+        label: "Expected Revenue",
+        data: [70, 82, 90, 111, 122, 125, 129],
         borderColor: "#fff",
         backgroundColor: "#fff",
         fill: false,
@@ -118,7 +118,7 @@ export default function CardLineChart() {
             <h6 className="mb-1 text-xs font-semibold uppercase text-blueGray-100">
               Overview
             </h6>
-            <h2 className="text-xl font-semibold text-white">Sales value</h2>
+            <h2 className="text-xl font-semibold text-white">Revenue value</h2>
           </div>
         </div>
       </div>

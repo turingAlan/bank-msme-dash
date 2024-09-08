@@ -6,43 +6,40 @@ import { toast } from "react-hot-toast";
 import { useAuth } from "context/UseAuth.js";
 
 export default function Register() {
-
-  const { registerUser } = useAuth()
-  const toastRef = useRef(null)
+  const { registerUser } = useAuth();
+  const toastRef = useRef(null);
 
   const [userDetails, setUserDetails] = useState({
     email: "",
     name: "",
-    password: ""
-  })
+    password: "",
+  });
 
   const userRegister = async () => {
-    toastRef.current = toast.promise(registerUser(userDetails),
-      {
-        success: (data) => `Welcome ${data?.name??""} login to continue`,
-        loading: () => `Loading`,
-        error: (error) => `${error}`
-      }
-    )
-  }
+    toastRef.current = toast.promise(registerUser(userDetails), {
+      success: (data) => `Welcome ${data?.name ?? ""} login to continue`,
+      loading: () => `Loading`,
+      error: (error) => `${error}`,
+    });
+  };
 
-  const handleUserDetails = (e) =>{
-    e.preventDefault()
-  setUserDetails((prevDetails)=>{return (
-    {
-      ...prevDetails,
-      [e.target.name]:e.target.value
-    }
-  )})
-  }
+  const handleUserDetails = (e) => {
+    e.preventDefault();
+    setUserDetails((prevDetails) => {
+      return {
+        ...prevDetails,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
 
-  useEffect(()=>{
-    return ()=>{
-      if(toastRef.current!==null){
-        toast.dismiss(toastRef.current)
+  useEffect(() => {
+    return () => {
+      if (toastRef.current !== null) {
+        toast.dismiss(toastRef.current);
       }
-    }
-  })
+    };
+  });
 
   return (
     <>
@@ -62,7 +59,7 @@ export default function Register() {
               </div>
               <div className="flex-auto px-4 py-10 pt-0 lg:px-10">
                 <div className="mb-3 text-center font-bold text-blueGray-400">
-                  <small>Or sign up with credentials</small>
+                  <small>sign up with credentials</small>
                 </div>
                 <form>
                   <div className="relative mb-3 w-full">
@@ -73,8 +70,8 @@ export default function Register() {
                       Name
                     </label>
                     <input
-                    onChange={handleUserDetails}
-                    name="name"
+                      onChange={handleUserDetails}
+                      name="name"
                       type="email"
                       className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-blueGray-600 placeholder-blueGray-300 shadow transition-all duration-150 ease-linear focus:outline-none focus:ring"
                       placeholder="Name"
@@ -89,7 +86,7 @@ export default function Register() {
                       Email
                     </label>
                     <input
-                    onChange={handleUserDetails}
+                      onChange={handleUserDetails}
                       type="email"
                       name="email"
                       className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-blueGray-600 placeholder-blueGray-300 shadow transition-all duration-150 ease-linear focus:outline-none focus:ring"
@@ -105,8 +102,8 @@ export default function Register() {
                       Password
                     </label>
                     <input
-                    onChange={handleUserDetails}
-                    name= "password"
+                      onChange={handleUserDetails}
+                      name="password"
                       type="password"
                       className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-blueGray-600 placeholder-blueGray-300 shadow transition-all duration-150 ease-linear focus:outline-none focus:ring"
                       placeholder="Password"
@@ -122,13 +119,12 @@ export default function Register() {
                       />
                       <span className="ml-2 text-sm font-semibold text-blueGray-600">
                         I agree with the{" "}
-                        <a
-                          href="#pablo"
+                        <Link
+                          href="/auth/privacyPolicy"
                           className="text-lightBlue-500"
-                          onClick={(e) => e.preventDefault()}
                         >
                           Privacy Policy
-                        </a>
+                        </Link>
                       </span>
                     </label>
                   </div>

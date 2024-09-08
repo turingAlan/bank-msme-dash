@@ -1,13 +1,13 @@
 import React from "react";
 
 import Admin from "../../layout.js";
-import CardLineChart from "components/Cards/CardLineChart.js";
 import CompanyDetailsCard from "components/CompanyDetails/index.js";
+import CardInlineBarChart from "components/Cards/CardOnboardedBarChart.js";
 
 export default function Page() {
   return (
     <>
-      <CardLineChart />
+      <CardInlineBarChart />
       <CompanyDetailsCard
         companyName={"Levis"}
         logoUrl="/img/bank/yes.png"
