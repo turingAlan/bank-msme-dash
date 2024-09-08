@@ -1,0 +1,54 @@
+{
+  "name": "bank-msme-dash",
+  "version": "1.1.0",
+  "description": "Dashboard for banks to manage there users",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "6.0.0",
+    "@popperjs/core": "2.11.7",
+    "@tailwindcss/forms": "0.5.3",
+    "add": "^2.0.6",
+    "chart.js": "2.9.3",
+    "dayjs": "^1.11.13",
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.9",
+    "next": "13.4.6",
+    "prop-types": "^15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "tailwind-merge": "^2.5.2"
+  },
+  "scripts": {
+    "start": "next start",
+    "build": "next build",
+    "dev": "next dev",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run dev",
+    "build:tailwind": "tailwind build styles/index.css -o styles/tailwind.css"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "optionalDependencies": {
+    "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.22",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tailwindcss": "^3.4.10"
+  }
+}
